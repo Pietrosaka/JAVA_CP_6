@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "banco-tranquilo-api",
+		"name": "Banco Tranquilo API",
+		"description": "Coleção de requisições para testar a API do Banco Tranquilo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Compras",
+			"item": [
+				{
+					"name": "Criar Compra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numeroCartao\": \"1234567890123456\",\n  \"cvv\": \"123\",\n  \"dataValidade\": \"12/25\",\n  \"valor\": 100.50,\n  \"emailCliente\": \"cliente@example.com\",\n  \"nomeCliente\": \"João Silva\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/compras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"compras"
+							]
+						},
+						"description": "Cria uma nova compra e envia para processamento via RabbitMQ"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Compra por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/compras/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"compras",
+								"1"
+							]
+						},
+						"description": "Busca uma compra específica pelo ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todas as Compras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/compras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"compras"
+							]
+						},
+						"description": "Lista todas as compras cadastradas no sistema"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints relacionados a compras"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
+

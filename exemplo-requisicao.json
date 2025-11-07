@@ -1,0 +1,30 @@
+{
+  "numeroCartao": "1234567890123456",
+  "cvv": "123",
+  "dataValidade": "12/25",
+  "valor": 100.50,
+  "emailCliente": "cliente@example.com",
+  "nomeCliente": "João Silva"
+}
+
+// Exemplo de requisição para criar uma compra no sistema Banco Tranquilo
+// Endpoint: POST http://localhost:8080/api/compras
+// Content-Type: application/json
+//
+// Campos obrigatórios:
+// - numeroCartao: String (13-19 dígitos)
+// - cvv: String (3-4 dígitos)
+// - dataValidade: String (formato MM/YY)
+// - valor: BigDecimal (deve ser maior que 0.01)
+// - emailCliente: String (formato de e-mail válido)
+// - nomeCliente: String (não vazio)
+//
+// Exemplo de resposta de sucesso (201 Created):
+// {
+//   "id": 1,
+//   "status": "PENDENTE",
+//   "mensagem": "Compra criada e em processamento",
+//   "dataCriacao": "2024-01-15T10:30:00"
+// }
+
+
