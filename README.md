@@ -240,5 +240,6 @@ curl -X POST http://localhost:8080/api/compras \
 - Java 17
 - Spring Boot 3.1.5
 - Maven
+- IntelliJ IDEA
 
 
